@@ -1,6 +1,7 @@
 
 from docx2csv import extract_tables, extract
-import requests
+import requests, os, io, csv
+
 
 url = 'https://www.fedramp.gov/assets/resources/templates/FedRAMP-SSP-High-Baseline-Template.docx'
 
@@ -10,4 +11,4 @@ print("Write to local copy fedramp.docx")
 open('fedramp.docx', 'wb').write(r.content)
 
 print("Extracting tables with more than 20 rows from docx into csv")
-extract(filename='fedramp.docx', format="csv", sizefilter=20)
+extract(filename='fedramp.docx', format="csv", sizefilter=20 )

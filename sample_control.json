@@ -1,0 +1,46 @@
+{
+  "Controls": [
+    {
+      "Id": "IA-2",
+      "Title": "Access Control Policy and Procedures Requirements",
+      "ControlText": "The information system uniquely identifies and authenticates organizational users (or processes acting on behalf of organizational users).",
+      "ImpactLevels": {
+        "High": true,
+        "Moderate": true,
+        "Low": true
+      },
+      "Enhancements": [
+        {
+          "Id": "1",
+          "ControlText": "The information system implements multifactor authentication for network access to privileged accounts.",
+          "ImpactLevels": {
+            "High": true,
+            "Moderate": true,
+            "Low": true
+          }
+        },
+        {
+          "Id": "12",
+          "ControlText": "The information system accepts and electronically verifies Personal Identity Verification (PIV) credentials.",
+          "ImpactLevels": {
+            "High": true,
+            "Moderate": true,
+            "Low": true
+          },
+          "FedrampGuidance": "Include Common Access Card (CAC), i.e., the DoD technical implementation of PIV/FIPS 201/HSPD-12."
+        }
+      ]
+    },
+    {
+      "Id": "IA-4",
+      "Title": "Identifier Management",
+      "ControlText": "<p>The organization manages information system identifiers for users and devices by:</p><p>Receiving authorization from [<em>Assignment: organization-defined personnel or roles</em>] to assign an individual, group, role, or device identifier;</p><p>Selecting an identifier that identifies an individual, group, role, or device;</p><p>Assigning the identifier to the intended individual, group, role, or device;</p><p>Preventing reuse of identifiers for [<em>FedRAMP Assignment: at least two (2) years</em>]; and</p><p>Disabling the identifier after [<em>FedRAMP Assignment: ninety days for user identifiers (see additional requirements and guidance)</em>]</p>",
+      "ImpactLevels": {
+        "High": false,
+        "Moderate": true,
+        "Low": true
+      },
+      "FedrampGuidance": "<p><strong>Requirement:</strong> The service provider defines the time period of inactivity for device identifiers.</p><p><strong>Guidance:</strong> For DoD clouds, see DoD cloud website for specific DoD requirements that go above and beyond FedRAMP http://iase.disa.mil/cloud_security/Pages/index.aspx."
+    }
+  ]
+}
