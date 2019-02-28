@@ -58,7 +58,7 @@ for file in files:
                         "ID": row["ID"], 
                         "ControlText": row['Control Description'],
                         "Impacts": [file['Impact']],
-                        "FedrampGuidance": row['Further Guidance']
+                        "FedrampGuidance": row['Further Guidance'].strip()
                         }
                     if controls['Controls'][tc]:
                         controls['Controls'][tc]["Enhancements"].append(enhancement)
@@ -74,7 +74,7 @@ for file in files:
                         "ControlText": row['Control Description'],
                         "Impacts": [file['Impact']],
                         "Enhancements": [],
-                        "FedrampGuidance": row['Further Guidance']
+                        "FedrampGuidance": row['Further Guidance'].strip()
                         }
                     controls['Controls'][row["ID"]] = control
 
