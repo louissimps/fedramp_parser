@@ -78,9 +78,17 @@ for file in files:
                         }
                     controls['Controls'][row["ID"]] = control
 
-#print(controls)
+output_struct = {"Controls": []}
+for control in controls['Controls']:
+    output_struct['Controls'].append(controls['Controls'][control])    
+
 with open('./output/fedramp_controls.json', 'wb') as f:
-   json.dump(controls, codecs.getwriter('utf-8')(f), ensure_ascii=False)
+   json.dump(output_struct, codecs.getwriter('utf-8')(f), ensure_ascii=False)
+
+
+#print(controls)
+# with open('./output/fedramp_controls.json', 'wb') as f:
+#    json.dump(controls, codecs.getwriter('utf-8')(f), ensure_ascii=False)
 
 # pathName = os.getcwd()
 # file_list = []
