@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+<div class="container">
+  <div class="row">
+        {% for control in site.data.fedramp_controls["Controls"] %}
+
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+              {% for imp in control.Impacts %}
+                {% if imp == "High" %}
+                <span class="badge badge-pill badge-danger">H</span>
+                {% elsif imp == "Moderate" %}
+                <span class="badge badge-pill badge-warning">M</span>
+                
+                {% elsif imp == "Low" %}
+                <span class="badge badge-pill badge-success">L</span>
+                
+                {% endif %}
+
+              {% endfor %}
+            <h5 class="card-title">{{ control.TITLE}}</h5>
+            <p class="card-text small">{{ control.ControlText | truncate 50 }}</p>
+            <h6>Enhancements</h6>
+            <ul>
+            {% for enc in control.Enhancements | limit: 3 %}
+              <li><span class="small">{{ enc.ID }}</span>
+              {% for imp in enc.Impacts %}
+                {% if imp == "High" %}
+                <span class="badge badge-pill badge-danger small">H</span>
+                {% elsif imp == "Moderate" %}
+                <span class="badge badge-pill badge-warning">M</span>
+                
+                {% elsif imp == "Low" %}
+                <span class="badge badge-pill badge-success">L</span>
+                
+                {% endif %}
+
+              {% endfor %}
+
+            </li>
+            {% endfor %}
+
+          </ul>
+          </div>
+        </div>
+
+        {% endfor %}    
+
+  </div>
+</div>
