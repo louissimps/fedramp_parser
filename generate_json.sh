@@ -7,8 +7,12 @@ fi
 # esac
 # done
 
+echo "Creating output dir"
+mkdir -p output/
+
 echo "Processing Controls"
 python cleanup_csv.py
+
 
 if [[ $CREATE_MARKDOWN == "1" ]]; then
     echo "Generating fedramp_controls.markdown"
