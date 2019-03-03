@@ -1,0 +1,13 @@
+# Site settings
+title: FEDRAmp Explorer
+email:
+author: Louie Simpson
+description: an explorer for fedramp controls on a static site
+url:
+
+# Build settings
+permalink: :title/
+sass:
+  sass_dir: css
+
+
