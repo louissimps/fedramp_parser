@@ -86,6 +86,7 @@ with open('./output/fedramp_controls.json', 'wb') as f:
    json.dump(output_struct, codecs.getwriter('utf-8')(f), ensure_ascii=False)
 
 
+
 #print(controls)
 # with open('./output/fedramp_controls.json', 'wb') as f:
 #    json.dump(controls, codecs.getwriter('utf-8')(f), ensure_ascii=False)
