@@ -20,6 +20,16 @@ def find_control_by_id(id):
         if control == id:
             return control
 
+def extract_related_controls(input_text):
+    matches = []
+    if("related control" in input_text.lower()):
+
+        m = re.search("related control[s]?:([^\.]+)\.", input_text.lower())
+        if(m):
+            raw = m.groups(0)[0].replace(" ", "")
+            matches = raw.split(",")
+    
+    return matches 
 
 controls = {'Controls': {}}
 idx = 0
@@ -58,6 +68,7 @@ for file in files:
                         "ID": row["ID"], 
                         "ControlText": row['Control Description'],
                         "Impacts": [file['Impact']],
+                        "RelatedControls": extract_related_controls(row['Control Description']),
                         "FedrampGuidance": row['Further Guidance'].strip()
                         }
                     if controls['Controls'][tc]:
@@ -71,9 +82,11 @@ for file in files:
                     control = { 
                         "ID": row["ID"], 
                         "TITLE": row['Control Name'],
+                        "Family": row["Family"],
                         "ControlText": row['Control Description'],
                         "Impacts": [file['Impact']],
                         "Enhancements": [],
+                        "RelatedControls": extract_related_controls(row['Control Description']),
                         "FedrampGuidance": row['Further Guidance'].strip()
                         }
                     controls['Controls'][row["ID"]] = control
