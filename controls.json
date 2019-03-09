@@ -1,0 +1,685 @@
+{
+  "ID": "AC-1",
+  "TITLE": "ACCESS CONTROL POLICY AND PROCEDURES",
+  "Family": "ACCESS CONTROL",
+  "ControlText": "The organization:\n a. Develops, documents, and disseminates to [Assignment: organization-defined personnel or roles]:\n   1. An access control policy that addresses purpose, scope, roles, responsibilities, management commitment, coordination among organizational entities, and compliance; and\n   2. Procedures to facilitate the implementation of the access control policy and associated access controls; and\n b. Reviews and updates the current:\n   1. Access control policy [Assignment: organization-defined frequency]; and\n   2. Access control procedures [Assignment: organization-defined frequency].\n\n",
+  "Impacts": [
+    "High",
+    "Moderate",
+    "Low"
+  ],
+  "Enhancements": [],
+  "RelatedControls": [
+    "pm-9"
+  ],
+  "SupplementalGuidance": " This control addresses the establishment of policy and procedures for the effective implementation of selected security controls and control enhancements in the AC family. Policy and procedures reflect applicable federal laws, Executive Orders, directives, regulations, policies, standards, and guidance. Security program policies and procedures at the organization level may make the need for system-specific policies and procedures unnecessary. The policy can be included as part of the general information security policy for organizations or conversely, can be represented by multiple policies reflecting the complex nature of certain organizations. The procedures can be established for the security program in general and for particular information systems, if needed. \n\nThe organizational risk management strategy is a key factor in establishing policy and procedures. ",
+  "FedrampGuidance": "",
+  "Parameters": [
+    {
+      "Level": "High",
+      "Param": "AC-1 (b) (1) [at least annually] \nAC-1 (b) (2) [at least annually or whenever a significant change occurs]"
+    },
+    {
+      "Level": "Moderate",
+      "Param": "AC-1 (b) (1) [at least every 3 years]\nAC-1 (b) (2) [at least annually]"
+    },
+    {
+      "Level": "Low",
+      "Param": "AC-1 (b) (1) [at least every 3 years]\nAC-1 (b) (2) [at least annually]"
+    }
+  ]
+}
+{
+  "ID": "AC-2",
+  "TITLE": "ACCOUNT MANAGEMENT",
+  "Family": "ACCESS CONTROL",
+  "ControlText": "The organization:\n a. Identifies and selects the following types of information system accounts to support organizational missions/business functions: [Assignment: organization-defined information system account types];\n b. Assigns account managers for information system accounts;\n c. Establishes conditions for group and role membership;\n d. Specifies authorized users of the information system, group and role membership, and access authorizations (i.e., privileges) and other attributes (as required) for each account;\n e. Requires approvals by [Assignment: organization-defined personnel or roles] for requests to create information system accounts;\n f. Creates, enables, modifies, disables, and removes information system accounts in accordance with [Assignment: organization-defined procedures or conditions];\n g. Monitors the use of, information system accounts;\n h. Notifies account managers:\n   1. When accounts are no longer required;\n   2. When users are terminated or transferred; and\n   3. When individual information system usage or need-to-know changes;\n i. Authorizes access to the information system based on:\n   1. A valid access authorization;\n   2. Intended system usage; and\n   3. Other attributes as required by the organization or associated missions/business functions;\n j. Reviews accounts for compliance with account management requirements [Assignment: organization-defined frequency]; and\n k. Establishes a process for reissuing shared/group account credentials (if deployed) when individuals are removed from the group.\n",
+  "Impacts": [
+    "High",
+    "Moderate",
+    "Low"
+  ],
+  "Enhancements": [
+    {
+      "ID": "AC-2 (1)",
+      "ControlText": "The organization employs automated mechanisms to support the management of information system accounts.\n\n",
+      "Impacts": [
+        "High",
+        "Moderate"
+      ],
+      "SupplementalGuidance": " The use of automated mechanisms can include, for example: using email or text messaging to automatically notify account managers when users are terminated or transferred; using the information system to monitor account usage; and using telephonic notification to report atypical system account usage.\n",
+      "RelatedControls": [],
+      "FedrampGuidance": "",
+      "Parameters": []
+    },
+    {
+      "ID": "AC-2 (2)",
+      "ControlText": "The information system automatically [Selection: removes; disables] temporary and emergency accounts after [Assignment: organization-defined time period for each type of account].\n\n",
+      "Impacts": [
+        "High",
+        "Moderate"
+      ],
+      "SupplementalGuidance": " This control enhancement requires the removal of both temporary and emergency accounts automatically after a predefined period of time has elapsed, rather than at the convenience of the systems administrator.\n",
+      "RelatedControls": [],
+      "FedrampGuidance": "",
+      "Parameters": [
+        {
+          "Level": "High",
+          "Param": "AC-2 (2) [Selection: disables] \n[Assignment: 24 hours from last use]"
+        },
+        {
+          "Level": "Moderate",
+          "Param": "AC-2 (2) [no more than 30 days for temporary and emergency account types]"
+        }
+      ]
+    },
+    {
+      "ID": "AC-2 (3)",
+      "ControlText": "The information system automatically disables inactive accounts after [Assignment: organization-defined time period].\n",
+      "Impacts": [
+        "High",
+        "Moderate"
+      ],
+      "SupplementalGuidance": "",
+      "RelatedControls": [],
+      "FedrampGuidance": "AC-2 (3) Requirement: The service provider defines the time period for non-user accounts (e.g., accounts associated with devices).  The time periods are approved and accepted by the JAB/AO. Where user management is a function of the service, reports of activity of consumer users shall be made available.",
+      "Parameters": [
+        {
+          "Level": "High",
+          "Param": "AC-2 (3) [35 days for user accounts]"
+        },
+        {
+          "Level": "Moderate",
+          "Param": "AC-2 (3) [90 days for user accounts]"
+        }
+      ]
+    },
+    {
+      "ID": "AC-2 (4)",
+      "ControlText": "The information system automatically audits account creation, modification, enabling, disabling, and removal actions, and notifies [Assignment: organization-defined personnel or roles].\n\n",
+      "Impacts": [
+        "High",
+        "Moderate"
+      ],
+      "SupplementalGuidance": " ",
+      "RelatedControls": [
+        "au-2",
+        "au-12"
+      ],
+      "FedrampGuidance": "",
+      "Parameters": [
+        {
+          "Level": "High",
+          "Param": "AC-2 (4) [organization and/or service provider system owner]"
+        }
+      ]
+    },
+    {
+      "ID": "AC-2 (5)",
+      "ControlText": "The organization requires that users log out when [Assignment: organization-defined time-period of expected inactivity or description of when to log out].\n\n",
+      "Impacts": [
+        "High",
+        "Moderate"
+      ],
+      "SupplementalGuidance": " ",
+      "RelatedControls": [
+        "sc-23"
+      ],
+      "FedrampGuidance": "AC-2 (5) Guidance: Should use a shorter timeframe than AC-12.",
+      "Parameters": [
+        {
+          "Level": "High",
+          "Param": "AC-2 (5) [inactivity is anticipated to exceed Fifteen (15) minutes]"
+        }
+      ]
+    },
+    {
+      "ID": "AC-2 (7)",
+      "ControlText": "The organization:\n(a) Establishes and administers privileged user accounts in accordance with a role-based access scheme that organizes allowed information system access and privileges into roles;\n(b) Monitors privileged role assignments; and\n(c) Takes [Assignment: organization-defined actions] when privileged role assignments are no longer appropriate.\n\n",
+      "Impacts": [
+        "High",
+        "Moderate"
+      ],
+      "SupplementalGuidance": " Privileged roles are organization-defined roles assigned to individuals that allow those individuals to perform certain security-relevant functions that ordinary users are not authorized to perform. These privileged roles include, for example, key management, account management, network and system administration, database administration, and web administration.\n",
+      "RelatedControls": [],
+      "FedrampGuidance": "",
+      "Parameters": [
+        {
+          "Level": "High",
+          "Param": "AC-2 (7) (c) [disables/revokes access within a organization-specified timeframe]"
+        }
+      ]
+    },
+    {
+      "ID": "AC-2 (9)",
+      "ControlText": "The organization only permits the use of shared/group accounts that meet [Assignment: organization-defined conditions for establishing shared/group accounts].\n",
+      "Impacts": [
+        "High",
+        "Moderate"
+      ],
+      "SupplementalGuidance": "",
+      "RelatedControls": [],
+      "FedrampGuidance": "AC-2 (9) Required if shared/group accounts are deployed",
+      "Parameters": [
+        {
+          "Level": "High",
+          "Param": "AC-2 (9) [organization-defined need with justification statement that explains why such accounts are necessary]"
+        }
+      ]
+    },
+    {
+      "ID": "AC-2 (10)",
+      "ControlText": "The information system terminates shared/group account credentials when members leave the group.\n",
+      "Impacts": [
+        "High",
+        "Moderate"
+      ],
+      "SupplementalGuidance": "",
+      "RelatedControls": [],
+      "FedrampGuidance": "AC-2 (10) Required if shared/group accounts are deployed",
+      "Parameters": []
+    },
+    {
+      "ID": "AC-2 (11)",
+      "ControlText": "The information system enforces [Assignment: organization-defined circumstances and/or usage conditions] for [Assignment: organization-defined information system accounts].\n\n",
+      "Impacts": [
+        "High"
+      ],
+      "SupplementalGuidance": " Organizations can describe the specific conditions or circumstances under which information system accounts can be used, for example, by restricting usage to certain days of the week, time of day, or specific durations of time.\n",
+      "RelatedControls": [],
+      "FedrampGuidance": "",
+      "Parameters": []
+    },
+    {
+      "ID": "AC-2 (12)",
+      "ControlText": "The organization:\n (a) Monitors information system accounts for [Assignment: organization-defined atypical use]; and\n (b) Reports atypical usage of information system accounts to [Assignment: organization-defined personnel or roles].\n\n",
+      "Impacts": [
+        "High",
+        "Moderate"
+      ],
+      "SupplementalGuidance": " Atypical usage includes, for example, accessing information systems at certain times of the day and from locations that are not consistent with the normal usage patterns of individuals working in organizations. ",
+      "RelatedControls": [
+        "ca-7"
+      ],
+      "FedrampGuidance": "AC-2 (12)(a) Guidance: Required for privileged accounts.\nAC-2 (12)(b) Guidance: Required for privileged accounts.",
+      "Parameters": [
+        {
+          "Level": "High",
+          "Param": "AC-2 (12) (b)[at a minimum, the ISSO and/or similar role within the organization]"
+        }
+      ]
+    },
+    {
+      "ID": "AC-2 (13)",
+      "ControlText": "The organization disables accounts of users posing a significant risk within [Assignment: organization-defined time period] of discovery of the risk.\n\n",
+      "Impacts": [
+        "High"
+      ],
+      "SupplementalGuidance": " Users posing a significant risk to organizations include individuals for whom reliable evidence or intelligence indicates either the intention to use authorized access to information systems to cause harm or through whom adversaries will cause harm. Harm includes potential adverse impacts to organizational operations and assets, individuals, other organizations, or the Nation. Close coordination between authorizing officials, information system administrators, and human resource managers is essential in order for timely execution of this control enhancement. ",
+      "RelatedControls": [
+        "ps-4"
+      ],
+      "FedrampGuidance": "",
+      "Parameters": [
+        {
+          "Level": "High",
+          "Param": "AC-2 (13) [one (1) hour]"
+        }
+      ]
+    }
+  ],
+  "RelatedControls": [
+    "ac-3",
+    "ac-4",
+    "ac-5",
+    "ac-6",
+    "ac-10",
+    "ac-17",
+    "ac-19",
+    "ac-20",
+    "au-9",
+    "ia-2",
+    "ia-4",
+    "ia-5",
+    "ia-8",
+    "cm-5",
+    "cm-6",
+    "cm-11",
+    "ma-3",
+    "ma-4",
+    "ma-5",
+    "pl-4",
+    "sc-13"
+  ],
+  "SupplementalGuidance": " Information system account types include individual, shared, group, system, guest/anonymous, emergency, developer/manufacturer/vendor, temporary, and service. Some of the account management requirements listed above can be implemented by organizational information systems. The identification of authorized users of the information system and the specification of access privileges reflects the requirements in other security controls in the security plan. Users requiring administrative privileges on information system accounts receive additional scrutiny by appropriate organizational personnel (e.g., system owner, mission/business owner, or chief information security officer) responsible for approving such accounts and privileged access. Organizations may choose to define access privileges or other attributes by account, by type of account, or a combination of both. Other attributes required for authorizing access include, for example, restrictions on time-of-day, day-of-week, and point-of-origin. In defining other account attributes, organizations consider system-related requirements (e.g., scheduled maintenance, system upgrades) and mission/business requirements, (e.g., time zone differences, customer requirements, remote access to support travel requirements). Failure to consider these factors could affect information system availability. Temporary and emergency accounts are accounts intended for short-term use. Organizations establish temporary accounts as a part of normal account activation procedures when there is a need for short-term accounts without the demand for immediacy in account activation. Organizations establish emergency accounts in response to crisis situations and with the need for rapid account activation. Therefore, emergency account activation may bypass normal account authorization processes. Emergency and temporary accounts are not to be confused with infrequently used accounts (e.g., local logon accounts used for special tasks defined by organizations or when network resources are unavailable). Such accounts remain available and are not subject to automatic disabling or removal dates. Conditions for disabling or deactivating accounts include, for example: (i) when shared/group, emergency, or temporary accounts are no longer required; or (ii) when individuals are transferred or terminated. Some types of information system accounts may require specialized training. ",
+  "FedrampGuidance": "",
+  "Parameters": [
+    {
+      "Level": "High",
+      "Param": "AC-2 (j) [monthly for privileged accessed, every six (6) months for non-privileged access] "
+    },
+    {
+      "Level": "Moderate",
+      "Param": "AC-2 (j) [at least annually]"
+    },
+    {
+      "Level": "Low",
+      "Param": "AC-2 (j) [at least annually]"
+    }
+  ]
+}
+{
+  "ID": "AC-3",
+  "TITLE": "ACCESS ENFORCEMENT",
+  "Family": "ACCESS CONTROL",
+  "ControlText": "The information system enforces approved authorizations for logical access to information and system resources in accordance with applicable access control policies.\n\n",
+  "Impacts": [
+    "High",
+    "Moderate",
+    "Low"
+  ],
+  "Enhancements": [],
+  "RelatedControls": [
+    "ac-2",
+    "ac-4",
+    "ac-5",
+    "ac-6",
+    "ac-16",
+    "ac-17",
+    "ac-18",
+    "ac-19",
+    "ac-20",
+    "ac-21",
+    "ac-22",
+    "au-9",
+    "cm-5",
+    "cm-6",
+    "cm-11",
+    "ma-3",
+    "ma-4",
+    "ma-5",
+    "pe-3"
+  ],
+  "SupplementalGuidance": " Access control policies (e.g., identity-based policies, role-based policies, attribute-based policies) and access enforcement mechanisms (e.g., access control lists, access control matrices, cryptography) control access between active entities or subjects (i.e., users or processes acting on behalf of users) and passive entities or objects (e.g., devices, files, records, domains) in information systems. In addition to enforcing authorized access at the information system level and recognizing that information systems can host many applications and services in support of organizational missions and business operations, access enforcement mechanisms can also be employed at the application and service level to provide increased information security. ",
+  "FedrampGuidance": "",
+  "Parameters": []
+}
+{
+  "ID": "AC-4",
+  "TITLE": "INFORMATION FLOW ENFORCEMENT",
+  "Family": "ACCESS CONTROL",
+  "ControlText": "The information system enforces approved authorizations for controlling the flow of information within the system and between interconnected systems based on [Assignment: organization-defined information flow control policies].\n\n",
+  "Impacts": [
+    "High",
+    "Moderate"
+  ],
+  "Enhancements": [
+    {
+      "ID": "AC-4 (8)",
+      "ControlText": "The information system enforces information flow control using [Assignment: organization-defined security policy filters] as a basis for flow control decisions for [Assignment: organization-defined information flows].\n\n",
+      "Impacts": [
+        "High"
+      ],
+      "SupplementalGuidance": "  Organization-defined security policy filters can address data structures and content. For example, security policy filters for data structures can check for maximum file lengths, maximum field sizes, and data/file types (for structured and unstructured data). Security policy filters for data content can check for specific words (e.g., dirty/clean word filters), enumerated values or data value ranges, and hidden content. Structured data permits the interpretation of data content by applications. Unstructured data typically refers to digital information without a particular data structure or with a data structure that does not facilitate the development of rule sets to address the particular sensitivity of the information conveyed by the data or the associated flow enforcement decisions. Unstructured data consists of: (i) bitmap objects that are inherently non language-based (i.e., image, video, or audio files); and (ii) textual objects that are based on written or printed languages (e.g., commercial off-the- shelf word processing documents, spreadsheets, or emails). Organizations can implement more than one security policy filter to meet information flow control objectives (e.g., employing clean word lists in conjunction with dirty word lists may help to reduce false positives).\n",
+      "RelatedControls": [],
+      "FedrampGuidance": "",
+      "Parameters": []
+    },
+    {
+      "ID": "AC-4 (21)",
+      "ControlText": "The information system separates information flows logically or physically using [Assignment: organization-defined mechanisms and/or techniques] to accomplish [Assignment: organization- defined required separations by types of information].\n\n",
+      "Impacts": [
+        "High",
+        "Moderate"
+      ],
+      "SupplementalGuidance": "  Enforcing the separation of information flows by type can enhance protection by ensuring that information is not commingled while in transit and by enabling flow control by transmission paths perhaps not otherwise achievable. Types of separable information include, for example, inbound and outbound communications traffic, service requests and responses, and information of differing security categories.\n",
+      "RelatedControls": [],
+      "FedrampGuidance": "",
+      "Parameters": []
+    }
+  ],
+  "RelatedControls": [
+    "ac-3",
+    "ac-17",
+    "ac-19",
+    "ac-21",
+    "cm-6",
+    "cm-7",
+    "sa-8",
+    "sc-2",
+    "sc-5",
+    "sc-7",
+    "sc-18"
+  ],
+  "SupplementalGuidance": " Information flow control regulates where information is allowed to travel within an information system and between information systems (as opposed to who is allowed to access the information) and without explicit regard to subsequent accesses to that information. Flow control restrictions include, for example, keeping export-controlled information from being transmitted in the clear to the Internet, blocking outside traffic that claims to be from within the organization, restricting web requests to the Internet that are not from the internal web proxy server, and limiting information transfers between organizations based on data structures and content. Transferring information between information systems representing different security domains with different security policies introduces risk that such transfers violate one or more domain security policies. In such situations, information owners/stewards provide guidance at designated policy enforcement points between interconnected systems. Organizations consider mandating specific architectural solutions when required to enforce specific security policies. Enforcement includes, for example: (i) prohibiting information transfers between interconnected systems (i.e., allowing access only); (ii) employing hardware mechanisms to enforce one-way information flows; and (iii) implementing trustworthy regarding mechanisms to reassign security attributes and security labels.\n\nOrganizations commonly employ information flow control policies and enforcement mechanisms to control the flow of information between designated sources and destinations (e.g., networks, individuals, and devices) within information systems and between interconnected systems. Flow control is based on the characteristics of the information and/or the information path. Enforcement occurs, for example, in boundary protection devices (e.g., gateways, routers, guards, encrypted tunnels, firewalls) that employ rule sets or establish configuration settings that restrict information system services, provide a packet-filtering capability based on header information, or message- filtering capability based on message content (e.g., implementing key word searches or using document characteristics). Organizations also consider the trustworthiness of filtering/inspection mechanisms (i.e., hardware, firmware, and software components) that are critical to information flow enforcement. Control enhancements 3 through 22 primarily address cross-domain solution needs which focus on more advanced filtering techniques, in-depth analysis, and stronger flow enforcement mechanisms implemented in cross-domain products, for example, high-assurance guards. Such capabilities are generally not available in commercial off-the-shelf information technology products. ",
+  "FedrampGuidance": "",
+  "Parameters": []
+}
+{
+  "ID": "AC-5",
+  "TITLE": "SEPARATION OF DUTIES",
+  "Family": "ACCESS CONTROL",
+  "ControlText": "The organization:\n a. Separates [Assignment: organization-defined duties of individuals];\n b. Documents separation of duties of individuals; and\n c. Defines information system access authorizations to support separation of duties.\n\n",
+  "Impacts": [
+    "High",
+    "Moderate"
+  ],
+  "Enhancements": [],
+  "RelatedControls": [
+    "ac-3",
+    "ac-6",
+    "pe-3",
+    "pe-4",
+    "ps-2"
+  ],
+  "SupplementalGuidance": "  Separation of duties addresses the potential for abuse of authorized privileges and helps to reduce the risk of malevolent activity without collusion. Separation of duties includes, for example: (i) dividing mission functions and information system support functions among different individuals and/or roles; (ii) conducting information system support functions with different individuals (e.g., system management, programming, configuration management, quality assurance and testing, and network security); and (iii) ensuring security personnel administering access control functions do not also administer audit functions. ",
+  "FedrampGuidance": "AC-5 Guidance: CSPs have the option to provide a separation of duties matrix as an attachment to the SSP.",
+  "Parameters": []
+}
+{
+  "ID": "AC-6",
+  "TITLE": "LEAST PRIVILEGE",
+  "Family": "ACCESS CONTROL",
+  "ControlText": "The organization employs the principle of least privilege, allowing only authorized accesses for users (or processes acting on behalf of users) which are necessary to accomplish assigned tasks in accordance with organizational missions and business functions.\n\n",
+  "Impacts": [
+    "High",
+    "Moderate"
+  ],
+  "Enhancements": [
+    {
+      "ID": "AC-6 (1)",
+      "ControlText": "The organization explicitly authorizes access to [Assignment: organization-defined security functions (deployed in hardware, software, and firmware) and security-relevant information].\n\n",
+      "Impacts": [
+        "High",
+        "Moderate"
+      ],
+      "SupplementalGuidance": "  Security functions include, for example, establishing system accounts, configuring access authorizations (i.e., permissions, privileges), setting events to be audited, and setting intrusion detection parameters. Security-relevant information includes, for example, filtering rules for routers/firewalls, cryptographic key management information, configuration parameters for security services, and access control lists. Explicitly authorized personnel include, for example, security administrators, system and network administrators, system security officers, system maintenance personnel, system programmers, and other privileged users. ",
+      "RelatedControls": [
+        "ac-17",
+        "ac-18",
+        "ac-19"
+      ],
+      "FedrampGuidance": "",
+      "Parameters": [
+        {
+          "Level": "High",
+          "Param": "AC-6 (1) [all functions not publicly accessible and all security-relevant information not publicly available]"
+        }
+      ]
+    },
+    {
+      "ID": "AC-6 (2)",
+      "ControlText": "The organization requires that users of information system accounts, or roles, with access to [Assignment: organization-defined security functions or security-relevant information], use non- privileged accounts or roles, when accessing nonsecurity functions.\n\n",
+      "Impacts": [
+        "High",
+        "Moderate"
+      ],
+      "SupplementalGuidance": "  This control enhancement limits exposure when operating from within privileged accounts or roles. The inclusion of roles addresses situations where organizations implement access control policies such as role-based access control and where a change of role provides the same degree of assurance in the change of access authorizations for both the user and all processes acting on behalf of the user as would be provided by a change between a privileged and non-privileged account. ",
+      "RelatedControls": [
+        "pl-4"
+      ],
+      "FedrampGuidance": "AC-6 (2) Guidance:  Examples of security functions include but are not limited to: establishing system accounts, configuring access authorizations (i.e., permissions, privileges), setting events to be audited, and setting intrusion detection parameters, system programming, system and security administration, other privileged functions.",
+      "Parameters": [
+        {
+          "Level": "High",
+          "Param": "AC-6 (2) [all security functions]"
+        },
+        {
+          "Level": "Moderate",
+          "Param": "AC-6 (2) [all security functions]"
+        }
+      ]
+    },
+    {
+      "ID": "AC-6 (3)",
+      "ControlText": "The organization authorizes network access to [Assignment: organization-defined privileged commands] only for [Assignment: organization-defined compelling operational needs] and documents the rationale for such access in the security plan for the information system.\n\n",
+      "Impacts": [
+        "High"
+      ],
+      "SupplementalGuidance": "  Network access is any access across a network connection in lieu of local access (i.e., user being physically present at the device). ",
+      "RelatedControls": [
+        "ac-17"
+      ],
+      "FedrampGuidance": "",
+      "Parameters": [
+        {
+          "Level": "High",
+          "Param": "AC-6 (3)-1 [all privileged commands] "
+        }
+      ]
+    },
+    {
+      "ID": "AC-6 (5)",
+      "ControlText": "The organization restricts privileged accounts on the information system to [Assignment:\norganization-defined personnel or roles].\n\n",
+      "Impacts": [
+        "High",
+        "Moderate"
+      ],
+      "SupplementalGuidance": "  Privileged accounts, including super user accounts, are typically described as system administrator for various types of commercial off-the-shelf operating systems. Restricting privileged accounts to specific personnel or roles prevents day-to-day users from having access to privileged information/functions. Organizations may differentiate in the application of this control enhancement between allowed privileges for local accounts and for domain accounts provided organizations retain the ability to control information system configurations for key security parameters and as otherwise necessary to sufficiently mitigate risk. ",
+      "RelatedControls": [
+        "cm-6"
+      ],
+      "FedrampGuidance": "",
+      "Parameters": []
+    },
+    {
+      "ID": "AC-6 (7)",
+      "ControlText": "The organization:\n (a)   Reviews [Assignment: organization-defined frequency] the privileges assigned to [Assignment: organization-defined roles or classes of users] to validate the need for such privileges; and\n (b)   Reassigns or removes privileges, if necessary, to correctly reflect organizational mission/business needs.\n\n",
+      "Impacts": [
+        "High"
+      ],
+      "SupplementalGuidance": "  The need for certain assigned user privileges may change over time reflecting changes in organizational missions/business function, environments of operation, technologies, or threat. Periodic review of assigned user privileges is necessary to determine if the rationale for assigning such privileges remains valid. If the need cannot be revalidated, organizations take appropriate corrective actions. ",
+      "RelatedControls": [
+        "ca-7"
+      ],
+      "FedrampGuidance": "",
+      "Parameters": [
+        {
+          "Level": "High",
+          "Param": "AC-6 (7)(a)-1  at a minimum, annually\nAC-6 (7)(a)-2  all users with privileges"
+        }
+      ]
+    },
+    {
+      "ID": "AC-6 (8)",
+      "ControlText": "The information system prevents [Assignment: organization-defined software] from executing at higher privilege levels than users executing the software.\n\n",
+      "Impacts": [
+        "High"
+      ],
+      "SupplementalGuidance": "  In certain situations, software applications/programs need to execute with elevated privileges to perform required functions. However, if the privileges required for execution are at a higher level than the privileges assigned to organizational users invoking such applications/programs, those users are indirectly provided with greater privileges than assigned by organizations.\n",
+      "RelatedControls": [],
+      "FedrampGuidance": "",
+      "Parameters": [
+        {
+          "Level": "High",
+          "Param": "AC-6 (8) [any software except software explicitly documented]"
+        }
+      ]
+    },
+    {
+      "ID": "AC-6 (9)",
+      "ControlText": "The information system audits the execution of privileged functions.\n\n",
+      "Impacts": [
+        "High",
+        "Moderate"
+      ],
+      "SupplementalGuidance": "  Misuse of privileged functions, either intentionally or unintentionally by authorized users, or by unauthorized external entities that have compromised information system accounts, is a serious and ongoing concern and can have significant adverse impacts on organizations. Auditing the use of privileged functions is one way to detect such misuse, and in doing so, help mitigate the risk from insider threats and the advanced persistent threat (APT). ",
+      "RelatedControls": [
+        "au-2"
+      ],
+      "FedrampGuidance": "",
+      "Parameters": []
+    },
+    {
+      "ID": "AC-6 (10)",
+      "ControlText": "The information system prevents non-privileged users from executing privileged functions to include disabling, circumventing, or altering implemented security safeguards/countermeasures.\n\n",
+      "Impacts": [
+        "High",
+        "Moderate"
+      ],
+      "SupplementalGuidance": "  Privileged functions include, for example, establishing information system accounts, performing system integrity checks, or administering cryptographic key management activities. Non-privileged users are individuals that do not possess appropriate authorizations. Circumventing intrusion detection and prevention mechanisms or malicious code protection mechanisms are examples of privileged functions that require protection from non-privileged users.\n",
+      "RelatedControls": [],
+      "FedrampGuidance": "",
+      "Parameters": []
+    }
+  ],
+  "RelatedControls": [
+    "ac-2",
+    "ac-3",
+    "ac-5",
+    "cm-6",
+    "cm-7",
+    "pl-2"
+  ],
+  "SupplementalGuidance": "  Organizations employ least privilege for specific duties and information systems. The principle of least privilege is also applied to information system processes, ensuring that the processes operate at privilege levels no higher than necessary to accomplish required organizational missions/business functions. Organizations consider the creation of additional processes, roles, and information system accounts as necessary, to achieve least privilege. Organizations also apply least privilege to the development, implementation, and operation of organizational information systems. ",
+  "FedrampGuidance": "",
+  "Parameters": []
+}
+{
+  "ID": "AC-7",
+  "TITLE": "UNSUCCESSFUL LOGON ATTEMPTS",
+  "Family": "ACCESS CONTROL",
+  "ControlText": "The information system:\n a. Enforces a limit of [Assignment: organization-defined number] consecutive invalid logon attempts by a user during a [Assignment: organization-defined time period]; and\n b. Automatically [Selection: locks the account/node for an [Assignment: organization-defined time period]; locks the account/node until released by an administrator; delays next logon prompt according to [Assignment: organization-defined delay algorithm]] when the maximum number of unsuccessful attempts is exceeded.\n\n",
+  "Impacts": [
+    "High",
+    "Moderate",
+    "Low"
+  ],
+  "Enhancements": [
+    {
+      "ID": "AC-7 (2)",
+      "ControlText": "The information system purges/wipes information from [Assignment: organization-defined mobile devices] based on [Assignment: organization-defined purging/wiping requirements/techniques] after [Assignment: organization-defined number] consecutive, unsuccessful device logon attempts.\n\n",
+      "Impacts": [
+        "High"
+      ],
+      "SupplementalGuidance": " This control enhancement applies only to mobile devices for which a logon occurs (e.g., personal digital assistants, smart phones, tablets). The logon is to the mobile device, not to any one account on the device. Therefore, successful logons to any accounts on mobile devices reset the unsuccessful logon count to zero. Organizations define information to be purged/wiped carefully in order to avoid over purging/wiping which may result in devices becoming unusable. Purging/wiping may be unnecessary if the information on the device is protected with sufficiently strong encryption mechanisms. ",
+      "RelatedControls": [
+        "ac-19",
+        "mp-5",
+        "mp-6",
+        "sc-13"
+      ],
+      "FedrampGuidance": "",
+      "Parameters": [
+        {
+          "Level": "High",
+          "Param": "AC-7 (2)-1 [mobile devices as defined by organization policy]\nAC-7 (2)-3 [three (3)]"
+        }
+      ]
+    }
+  ],
+  "RelatedControls": [
+    "ac-2",
+    "ac-9",
+    "ac-14",
+    "ia-5"
+  ],
+  "SupplementalGuidance": "  This control applies regardless of whether the logon occurs via a local or network connection. Due to the potential for denial of service, automatic lockouts initiated by information systems are usually temporary and automatically release after a predetermined time period established by organizations. If a delay algorithm is selected, organizations may choose to employ different algorithms for different information system components based on the capabilities of those components. Responses to unsuccessful logon attempts may be implemented at both the operating system and the application levels. ",
+  "FedrampGuidance": "",
+  "Parameters": [
+    {
+      "Level": "High",
+      "Param": "AC-7(a)-1 [not more than three (3)]\n \nAC-7(a)-2 [fifteen (15) minutes] \n\nAC-7(b) [locks the account/node for a minimum of three (3) hours or until unlocked by an administrator]"
+    },
+    {
+      "Level": "Moderate",
+      "Param": "AC-7(a)-1 [not more than three (3)]\n \nAC-7(a)-2 [fifteen (15) minutes] \n\nAC-7(b) [locks the account/node for thirty minutes]"
+    },
+    {
+      "Level": "Low",
+      "Param": "AC-7(a)-1 [not more than three (3)]\n \nAC-7(a)-2 [fifteen (15) minutes] \n\nAC-7(b) [locks the account/node for thirty minutes]"
+    }
+  ]
+}
+{
+  "ID": "AC-8",
+  "TITLE": "SYSTEM USE NOTIFICATION",
+  "Family": "ACCESS CONTROL",
+  "ControlText": "The information system:\n a. Displays to users [Assignment: organization-defined system use notification message or banner] before granting access to the system that provides privacy and security notices consistent with applicable federal laws, Executive Orders, directives, policies, regulations, standards, and guidance and states that:\n   1. Users are accessing a U.S. Government information system;\n   2. Information system usage may be monitored, recorded, and subject to audit;\n   3. Unauthorized use of the information system is prohibited and subject to criminal and civil penalties; and\n   4. Use of the information system indicates consent to monitoring and recording;\n b. Retains the notification message or banner on the screen until users acknowledge the usage conditions and take explicit actions to log on to or further access the information system; and \n c. For publicly accessible systems:\n   1. Displays system use information [Assignment: organization-defined conditions], before granting further access;\n   2. Displays references, if any, to monitoring, recording, or auditing that are consistent with privacy accommodations for such systems that generally prohibit those activities; and\n   3. Includes a description of the authorized uses of the system.\n\n",
+  "Impacts": [
+    "High",
+    "Moderate",
+    "Low"
+  ],
+  "Enhancements": [],
+  "RelatedControls": [],
+  "SupplementalGuidance": "  System use notifications can be implemented using messages or warning banners displayed before individuals log in to information systems. System use notifications are used only for access via logon interfaces with human users and are not required when such human interfaces do not exist. Organizations consider system use notification messages/banners displayed in multiple languages based on specific organizational needs and the demographics of information system users. Organizations also consult with the Office of the General Counsel for legal review and approval of warning banner content.\n\nControl Enhancements:  None.\n\nReferences: None.\n\n",
+  "FedrampGuidance": "AC-8 Requirement: The service provider shall determine elements of the cloud environment that require the System Use Notification control. The elements of the cloud environment that require System Use Notification are approved and accepted by the JAB/AO. \nRequirement: The service provider shall determine how System Use Notification is going to be verified and provide appropriate periodicity of the check. The System Use Notification verification and periodicity are approved and accepted by the JAB/AO.\nGuidance: If performed as part of a Configuration Baseline check, then the % of items requiring setting that are checked and that pass (or fail) check can be provided. \nRequirement: If not performed as part of a Configuration Baseline check, then there must be documented agreement on how to provide results of verification and the necessary periodicity of the verification by the service provider. The documented agreement on how to provide verification of the results are approved and accepted by the JAB/AO.",
+  "Parameters": [
+    {
+      "Level": "High",
+      "Param": "AC-8 (a) [see additional Requirements and Guidance]\nAC-8 (c) [see additional Requirements and Guidance]"
+    },
+    {
+      "Level": "Moderate",
+      "Param": "AC-8 (a) [see additional Requirements and Guidance]\nAC-8 (c) [see additional Requirements and Guidance]"
+    },
+    {
+      "Level": "Low",
+      "Param": "AC-8 (a) [see additional Requirements and Guidance]\nAC-8 (c) [see additional Requirements and Guidance]"
+    }
+  ]
+}
+{
+  "ID": "AC-10",
+  "TITLE": "CONCURRENT SESSION CONTROL",
+  "Family": "ACCESS CONTROL",
+  "ControlText": " The information system limits the number of concurrent sessions for each [Assignment: organization-defined account and/or account type] to [Assignment: organization-defined number].\n\n",
+  "Impacts": [
+    "High",
+    "Moderate"
+  ],
+  "Enhancements": [],
+  "RelatedControls": [],
+  "SupplementalGuidance": "  Organizations may define the maximum number of concurrent sessions for information system accounts globally, by account type (e.g., privileged user, non-privileged user, domain, specific application), by account, or a combination. For example, organizations may limit the number of concurrent sessions for system administrators or individuals working in particularly sensitive domains or mission-critical applications. This control addresses concurrent sessions for information system accounts and does not address concurrent sessions by single users via multiple system accounts.\n\nControl Enhancements:  None.\n\nReferences: None.\n\n",
+  "FedrampGuidance": "",
+  "Parameters": [
+    {
+      "Level": "High",
+      "Param": "AC-10-2 [three (3) sessions for privileged access and two (2) sessions for non-privileged access]"
+    },
+    {
+      "Level": "Moderate",
+      "Param": "AC-10-2 [three (3) sessions for privileged access and two (2) sessions for non-privileged access]"
+    }
+  ]
+}
+{
+  "ID": "AC-11",
+  "TITLE": "SESSION LOCK",
+  "Family": "ACCESS CONTROL",
+  "ControlText": "The information system:\n a. Prevents further access to the system by initiating a session lock after [Assignment: organization-defined time period] of inactivity or upon receiving a request from a user; and\n b. Retains the session lock until the user reestablishes access using established identification and authentication procedures.\n\n",
+  "Impacts": [
+    "High",
+    "Moderate"
+  ],
+  "Enhancements": [
+    {
+      "ID": "AC-11 (1)",
+      "ControlText": "The information system conceals, via the session lock, information previously visible on the display with a publicly viewable image.\n\n",
+      "Impacts": [
+        "High",
+        "Moderate"
+      ],
+      "SupplementalGuidance": "  Publicly viewable images can include static or dynamic images, for example, patterns used with screen savers, photographic images, solid colors, clock, battery life indicator, or a blank screen, with the additional caveat that none of the images convey sensitive information.\n\nReferences:  OMB Memorandum 06-16.\n",
+      "RelatedControls": [],
+      "FedrampGuidance": "",
+      "Parameters": []
+    }
+  ],
+  "RelatedControls": [
+    "ac-7"
+  ],
+  "SupplementalGuidance": "  Session locks are temporary actions taken when users stop work and move away from the immediate vicinity of information systems but do not want to log out because of the temporary nature of their absences. Session locks are implemented where session activities can be determined. This is typically at the operating system level, but can also be at the application level. Session locks are not an acceptable substitute for logging out of information systems, for example, if organizations require users to log out at the end of workdays. ",
+  "FedrampGuidance": "",
+  "Parameters": [
+    {
+      "Level": "High",
+      "Param": "AC-11(a) [fifteen (15) minutes]  "
+    },
+    {
+      "Level": "Moderate",
+      "Param": "AC-11(a) [fifteen (15) minutes]  "
+    }
+  ]
+}
