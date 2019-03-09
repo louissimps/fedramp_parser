@@ -50,7 +50,7 @@ python cleanup_csv.py
 if [[ $environment == "dev" ]]; then
 echo "Cutting records way back to avoid build times being really long"
 
-cat output/fedramp_controls.json |  jq 'limit(10;.[])' > output/controls.json
+cat output/fedramp_controls.json |  jq '[limit(10;.[])]' > output/controls.json
 echo "Created output/controls.json shortened dev version for use in explorer project"
 rm -rf output/fedramp_controls.json
 else
