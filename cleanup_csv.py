@@ -1,5 +1,6 @@
 
-import json, csv, io, codecs, os, docx, re
+import json, csv, io, codecs, os, docx, re, urllib3
+from bs4 import BeautifulSoup
 csv_dir = './csv'
 files = [
     {'filename': 'FSCB_High.csv', 'Impact': 'High'},
@@ -57,6 +58,47 @@ def extract_related_controls(input_text):
     
     return matches 
 
+def extract_iase_guidance(id):
+    for g in iase_guidance:
+        if(g["ID"] == id):
+            return g["GuidanceText"]
+
+def make_soup(url):
+    http = urllib3.PoolManager()
+    r = http.request("GET", url)
+    return BeautifulSoup(r.data,'html.parser')
+
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+print ('Downloading Iase Guidance from https://iase.disa.mil/cloud_security/cloudsrg/Pages/appendix-d.aspx')
+url = 'https://iase.disa.mil/cloud_security/cloudsrg/Pages/appendix-d.aspx'
+
+iase_soup = make_soup(url)
+iase_guidance = []
+
+rows = iase_soup.find_all('tr')
+print('Parsing rows to extract Iase guidance')
+for iase_g in rows:
+    p_tags = iase_g.find_all('p')
+    num_p = len(p_tags)
+    # If the row has two paragraphs the second is the guidance we want, sort of
+    if(num_p == 2):
+        guidance_para = p_tags[1]
+        m = re.search("^([^\n]+)\r{1}\n{1}([^\-]+)\-\-", guidance_para.get_text(), re.IGNORECASE)
+        if(m): 
+            if (m.groups):
+                iase_enhancement = m.groups(0)[0]
+                iase_enhancement_guidance = m.groups(0)[1]
+                iase_guidance.append({
+                    'ID': iase_enhancement.strip(),
+                    'GuidanceText': iase_enhancement_guidance.strip()
+                })
+
+
+
+
+
+
 controls = {'Controls': {}}
 idx = 0
 for file in files:
@@ -99,6 +141,7 @@ for file in files:
                         "SupplementalGuidance": find_supp_guidance(row['Control Description']),
                         "RelatedControls": extract_related_controls(row['Control Description']),
                         "FedrampGuidance": row['Further Guidance'].strip(),
+                        "IaseGuidance": extract_iase_guidance(row["ID"]),
                         "Parameters": []
                         }
                     if (parameter_string):
@@ -127,6 +170,7 @@ for file in files:
                         "Enhancements": [],
                         "RelatedControls": extract_related_controls(row['Control Description']),
                         "SupplementalGuidance": find_supp_guidance(row['Control Description']),
+                        "IaseGuidance": extract_iase_guidance(row["ID"]),
                         "FedrampGuidance": row['Further Guidance'].strip(),
                         "Parameters": []
                         }
@@ -135,11 +179,25 @@ for file in files:
                     controls['Controls'][row["ID"]] = control
 
 output_struct = []
+
+
+
+
+
+
+
+
+
+
 for control in controls['Controls']:
     output_struct.append(controls['Controls'][control])    
 
 with open('./output/fedramp_controls.json', 'wb') as f:
    json.dump(output_struct, codecs.getwriter('utf-8')(f), ensure_ascii=False)
+
+
+
+
 
 
 
